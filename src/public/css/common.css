@@ -1,0 +1,13 @@
+.header__inner {
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.header__logo {
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #918071;
+}

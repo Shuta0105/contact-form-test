@@ -1,0 +1,21 @@
+.content {
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.content__header {
+    color: #918071;
+}
+
+.button {
+    color: #fff;
+    background-color: #918071;
+    text-decoration: none;
+    padding: 8px 30px;
+    border-radius: 3px;
+}

@@ -1,0 +1,134 @@
+.header__inner {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+}
+
+.header__logo {
+    color: #918071;
+}
+
+.header__button {
+    color: #e9dfd6;
+    border: 1px solid #eee6e0;
+    background-color: #f6f6f6;
+    padding: 4px 10px;
+    text-decoration: none;
+    position: absolute;
+    right: 10%;
+}
+
+.admin__content {
+    max-width: 1230px;
+    margin: 30px auto;
+}
+
+.admin__header {
+    color: #918071;
+    font-size: 18px;
+    text-align: center;
+}
+
+.form {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form__input--text {
+    background-color: #fbfbfb;
+    border: 1px solid #f1eeec;
+    width: 300px;
+    height: 40px;
+    padding: 10px;
+}
+
+.form__input--text::placeholder {
+    color: #c8beb4;
+}
+
+.form__select {
+    border: 1px solid #f1eeec;
+    background-color: #f4f4f4;
+    padding: 8px 10px;
+    color: #9e8f80;
+}
+
+.form__input--date {
+    border: 1px solid #f1eeec;
+    background-color: #f4f4f4;
+    padding: 8px 10px;
+    color: #9e8f80;
+}
+
+.form__button--submit {
+    width: 100px;
+    color: #fff;
+    padding: 8px 20px;
+    border: none;
+    background-color: #82756a;
+}
+
+.form__button--reset {
+    width: 100px;
+    color: #fff;
+    padding: 8px 20px;
+    border: none;
+    background-color: #d9c6b5;
+}
+
+.admin__page {
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+}
+
+.admin__page-export {
+    color: #918071;
+    background-color: #edeae6;
+    padding: 8px 10px;
+}
+
+.admin-table {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.admin-table__inner {
+    width: 100%;
+}
+
+.admin-table__row:first-of-type {
+    color: #fff;
+    text-align: left;
+}
+
+.admin-table__row:first-of-type .admin-table__header {
+    background-color: #8b7969;
+    padding: 10px 40px;
+}
+
+.admin-table__row {
+    color: #918071;
+    border-bottom: 1px solid #c1b4a6;
+    border-right: 1px solid #c1b4a6;
+    border-left: 1px solid #c1b4a6;
+}
+
+.admin-table__item {
+    padding: 20px 40px;
+}
+
+.admin-table__detail {
+    color: #e9dfd6;
+    border: 1px solid #eee6e0;
+    background-color: #f6f6f6;
+    padding: 4px 10px;
+    text-decoration: none;
+}
