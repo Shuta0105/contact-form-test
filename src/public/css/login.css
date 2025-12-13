@@ -19,6 +19,7 @@
     text-decoration: none;
     position: absolute;
     right: 10px;
+    cursor: pointer;
 }
 
 .main {
@@ -88,4 +89,5 @@
     color: #fff;
     background-color: #82756b;
     padding: 10px 20px;
+    cursor: pointer;
 }

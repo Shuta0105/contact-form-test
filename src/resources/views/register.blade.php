@@ -22,19 +22,35 @@
             <div class="register__header">
                 <h2>Register</h2>
             </div>
-            <form action="" class="form">
+            <form action="/register" class="form" method="post">
+                @csrf
                 <div class="form__label">お名前</div>
                 <div class="form__input">
                     <input class="form__input-text" type="text" name="name" placeholder="例: 山田太郎" value="{{ old('name') }}">
                 </div>
+                @error('name')
+                <div class="form__error" style="color: red; text-align: left; width: 70%;">
+                    {{$message}}
+                </div>
+                @enderror
                 <div class="form__label">メールアドレス</div>
                 <div class="form__input">
                     <input class="form__input-text" type="email" name="email" placeholder="例: test@example.com" value="{{ old('email') }}">
                 </div>
+                @error('email')
+                <div class="form__error" style="color: red; text-align: left; width: 70%;">
+                    {{$message}}
+                </div>
+                @enderror
                 <div class="form__label">パスワード</div>
                 <div class="form__input">
                     <input class="form__input-text" type="password" name="password" placeholder="例: coachtech1106" value="{{ old('password') }}">
                 </div>
+                @error('password')
+                <div class="form__error" style="color: red; text-align: left; width: 70%;">
+                    {{$message}}
+                </div>
+                @enderror
                 <div class="form__button">
                     <button class="form__button-submit" type="submit">登録</button>
                 </div>

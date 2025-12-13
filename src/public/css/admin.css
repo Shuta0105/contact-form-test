@@ -11,18 +11,20 @@
     color: #918071;
 }
 
-.header__button {
-    color: #e9dfd6;
-    border: 1px solid #eee6e0;
-    background-color: #f6f6f6;
-    padding: 4px 10px;
-    text-decoration: none;
+.logout__form {
     position: absolute;
     right: 10%;
 }
 
+.logout__button {
+    color: #d9c6b5;
+    border: 1px solid #eee6e0;
+    background-color: #f6f6f6;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
 .admin__content {
-    max-width: 1230px;
     margin: 30px auto;
 }
 
@@ -32,25 +34,33 @@
     text-align: center;
 }
 
-.form {
-    width: 90%;
+.admin__search {
+    width: 80%;
     margin: 0 auto;
     text-align: center;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 50px;
+}
+
+.search__form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
 }
 
 .form__input--text {
     background-color: #fbfbfb;
     border: 1px solid #f1eeec;
-    width: 300px;
+    width: 400px;
     height: 40px;
     padding: 10px;
+    outline: none;
 }
 
 .form__input--text::placeholder {
-    color: #c8beb4;
+    color: #aa9c90;
 }
 
 .form__select {
@@ -73,6 +83,7 @@
     padding: 8px 20px;
     border: none;
     background-color: #82756a;
+    cursor: pointer;
 }
 
 .form__button--reset {
@@ -81,22 +92,40 @@
     padding: 8px 20px;
     border: none;
     background-color: #d9c6b5;
+    cursor: pointer;
 }
 
 .admin__page {
-    width: 90%;
+    width: 80%;
     margin: 20px auto;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.admin__page-export {
+.export-button {
     color: #918071;
+    border: none;
     background-color: #edeae6;
-    padding: 8px 10px;
+    padding: 8px 30px;
+    cursor: pointer;
+}
+
+.page {
+    border: 1px solid #c1b4a6;
+    padding: 5px 8px;
+    text-decoration: none;
+    color: #998775;
+    margin-right: -4px;
+}
+
+.page.active {
+    color: #fff;
+    background-color: #8b7969;
 }
 
 .admin-table {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -125,10 +154,91 @@
     padding: 20px 40px;
 }
 
-.admin-table__detail {
-    color: #e9dfd6;
+.admin-table__item:hover {
+    background-color: #f0f8ff;
+    cursor: pointer;
+}
+
+.admin-table__button {
+    color: #d9c6b5;
     border: 1px solid #eee6e0;
     background-color: #f6f6f6;
     padding: 4px 10px;
-    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-overlay.active {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal__inner {
+    margin: 0 auto;
+    width: 60%;
+    height: 90%;
+    border: 1px solid #bdb2a9;
+    background-color: #ffffff;
+}
+
+.modal-close {
+    text-align: right;
+    margin: 30px;
+}
+
+.modal-close__button {
+    color: #9f8f81;
+    border-radius: 50%;
+    border: 1px solid #9f8f81;
+    padding: 2px 8px;
+    background-color: #ffffff;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.modal-table {
+    width: 80%;
+    padding: 30px 0;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.modal-table__inner {
+    width: 100%;
+}
+
+.modal-table__row th,
+.modal-table__row td {
+    padding: 20px 0;
+}
+
+.modal-table__header {
+    color: #9f8f81;
+}
+
+.modal-table__item {
+    color: #a7998d;
+}
+
+.modal-delete {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.modal-delete__button {
+    color: #ffffff;
+    font-size: 18px;
+    background-color: #ba370d;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
 }

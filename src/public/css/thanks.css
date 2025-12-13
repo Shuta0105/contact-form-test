@@ -1,4 +1,5 @@
 .content {
+    position: relative;
     height: 100vh;
     margin: 0 auto;
     display: flex;
@@ -6,10 +7,25 @@
     justify-content: center;
     align-items: center;
     gap: 30px;
+    overflow: hidden;
+}
+
+.content::before {
+    content: "Thank you";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 300px;
+    color: #f9f8f8;
+    white-space: nowrap;
+    pointer-events: none;
 }
 
 .content__header {
     color: #918071;
+    position: relative;
+    z-index: 1;
 }
 
 .button {
@@ -18,4 +34,7 @@
     text-decoration: none;
     padding: 8px 30px;
     border-radius: 3px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
 }

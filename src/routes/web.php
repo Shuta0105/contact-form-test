@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,21 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('/confirm', function () {
-    return view('confirm');
-});
-Route::get('/thanks', function () {
-    return view('thanks');
-});
-Route::get('/register', function () {
-    return view('register');
-});
-Route::get('/login', function () {
-    return view('login');
-});
-Route::get('/admin', function () {
-    return view('admin');
-});
+Route::get('/', [ContactController::class, 'index']);
+Route::post('/confirm', [ContactController::class, 'confirm']);
+Route::post('/modify', [ContactController::class, 'modify']);
+Route::post('/thanks', [ContactController::class, 'store']);
+Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/search', [AdminController::class, 'search']);
+Route::get('/reset', [AdminController::class, 'reset']);
+Route::delete('/delete', [AdminController::class, 'destroy']);
