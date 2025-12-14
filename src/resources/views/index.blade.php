@@ -16,7 +16,7 @@
                 <span class="form__label--text">お名前</span>
                 <span class="form__label--required">※</span>
             </div>
-            <div class="form__input">
+            <div class="form__input-name">
                 <input class="form__input--name" type="text" name="last_name" placeholder="例: 山田" value="{{ old('last_name') }}">
                 <input class="form__input--name" type="text" name="first_name" placeholder="例: 太郎" value="{{ old('first_name') }}">
             </div>
@@ -40,16 +40,16 @@
             </div>
             <div class="form__input">
                 <div class="form__input-gender">
-                    <label class="form__label--radio"><input class="form__input--radio" type="radio" name="gender" value="1"
-                            {{ old('gender') == 1 ? 'checked' : '' }}>
+                    <label class="form__label--radio">
+                        <input class="form__input--radio" type="radio" name="gender" value="1" {{ old('gender') == 1 ? 'checked' : '' }}>
                         男性
                     </label>
-                    <label class="form__label--radio"><input class="form__input--radio" type="radio" name="gender" value="2"
-                            {{ old('gender') == 2 ? 'checked' : '' }}>
+                    <label class="form__label--radio">
+                        <input class="form__input--radio" type="radio" name="gender" value="2" {{ old('gender') == 2 ? 'checked' : '' }}>
                         女性
                     </label>
-                    <label class="form__label--radio"><input class="form__input--radio" type="radio" name="gender" value="3"
-                            {{ old('gender') == 3 ? 'checked' : '' }}>
+                    <label class="form__label--radio">
+                        <input class="form__input--radio" type="radio" name="gender" value="3" {{ old('gender') == 3 ? 'checked' : '' }}>
                         その他
                     </label>
                 </div>
@@ -79,7 +79,7 @@
                 <span class="form__label--text">電話番号</span>
                 <span class="form__label--required">※</span>
             </div>
-            <div class="form__input">
+            <div class="form__input-tel">
                 <input class="form__input--tel" type="tel" name="tel1" placeholder="080" value="{{ old('tel1') }}">
                 <span class="form__input--dash">-</span>
                 <input class="form__input--tel" type="tel" name="tel2" placeholder="1234" value="{{ old('tel2') }}">
@@ -87,21 +87,23 @@
                 <input class="form__input--tel" type="tel" name="tel3" placeholder="5678" value="{{ old('tel3') }}">
             </div>
         </div>
-        @error('tel1')
-        <div style="color: red; margin-bottom: 30px; margin-top: -20px; text-align: center; width: 80%;">
-            {{$message}}
+        <div class="form__error--tel" style="display: flex; justify-content:space-between; width: 75%; margin: 0 0 0 auto">
+            @error('tel1')
+            <div style="color: red; margin-bottom: 30px; margin-top: -20px;">
+                {{$message}}
+            </div>
+            @enderror
+            @error('tel2')
+            <div style="color: red; margin-bottom: 30px; margin-top: -20px;">
+                {{$message}}
+            </div>
+            @enderror
+            @error('tel3')
+            <div style="color: red; margin-bottom: 30px; margin-top: -20px;">
+                {{$message}}
+            </div>
+            @enderror
         </div>
-        @enderror
-        @error('tel2')
-        <div style="color: red; margin-bottom: 30px; margin-top: -20px">
-            {{$message}}
-        </div>
-        @enderror
-        @error('tel3')
-        <div style="color: red; margin-bottom: 30px; margin-top: -20px">
-            {{$message}}
-        </div>
-        @enderror
         <div class="form__group">
             <div class="form__label">
                 <span class="form__label--text">住所</span>
@@ -129,12 +131,14 @@
                 <span class="form__label--text">お問い合わせの種類</span>
                 <span class="form__label--required">※</span>
             </div>
-            <select class="form__select" name="category_id">
-                <option class="form__select-item" value="">選択してください</option>
-                @foreach ($categories as $category)
-                <option class="form__select-item" value="{{ $category['id'] }}" {{ old('category_id') == $category['id'] ? 'selected' : '' }}>{{ $category['content'] }}</option>
-                @endforeach
-            </select>
+            <div class="form__select-box">
+                <select class="form__select" name="category_id">
+                    <option class="form__select-item" value="">選択してください</option>
+                    @foreach ($categories as $category)
+                    <option class="form__select-item" value="{{ $category['id'] }}" {{ old('category_id') == $category['id'] ? 'selected' : '' }}>{{ $category['content'] }}</option>
+                    @endforeach
+                </select>
+            </div>
         </div>
         @error('category_id')
         <div style="color: red; margin-bottom: 30px; margin-top: -20px; text-align: center; width: 90%;">

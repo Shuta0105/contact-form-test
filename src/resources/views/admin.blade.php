@@ -64,7 +64,13 @@
                 </form>
             </div>
             <div class="admin__page">
-                <button class="export-button">エクスポート</button>
+                <form action="/export" class="export__form" method="get">
+                    <input type="hidden" name="name_or_email" value="{{ request('name_or_email') }}">
+                    <input type="hidden" name="gender" value="{{ request('gender') }}">
+                    <input type="hidden" name="category_id" value="{{ request('category_id') }}">
+                    <input type="hidden" name="date" value="{{ request('date') }}">
+                    <button class="export-button">エクスポート</button>
+                </form>
                 <div class="pagination">
                     <a href="{{ $contacts->previousPageUrl() }}" class="page">＜</a>
                     @foreach ($contacts->appends(request()->query())->links()->elements[0] as $page => $url)
@@ -84,10 +90,11 @@
                         <th class="admin-table__header">性別</th>
                         <th class="admin-table__header">メールアドレス</th>
                         <th class="admin-table__header">お問い合わせの種類</th>
+                        <th class="admin-table__header"></th>
                     </tr>
                     @foreach ($contacts as $contact)
                     <tr class="admin-table__row">
-                        <td class="admin-table__item">{{ $contact['last_name'].$contact['first_name'] }}</td>
+                        <td class="admin-table__item">{{ $contact['last_name'] }}　{{ $contact['first_name'] }}</td>
                         <td class="admin-table__item">
                             {{
                                 $contact['gender'] == 1 ? '男性' :

@@ -20,9 +20,12 @@ class ContactFactory extends Factory
             'gender' => $this->faker->numberBetween(1, 3),
             'email' => $this->faker->safeEmail(),
             'tel' => $this->faker->phoneNumber(),
-            'address' => $this->faker->address(),
-            'building' => $this->faker->buildingNumber(),
-            'detail' => $this->faker->sentence(),
+            'address' =>
+            $this->faker->prefecture()
+                . $this->faker->city()
+                . $this->faker->streetAddress(),
+            'building' => $this->faker->secondaryAddress(),
+            'detail' => $this->faker->realText(40),
         ];
     }
 }

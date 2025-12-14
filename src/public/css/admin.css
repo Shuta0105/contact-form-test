@@ -97,7 +97,7 @@
 
 .admin__page {
     width: 80%;
-    margin: 20px auto;
+    margin: 40px auto 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -222,10 +222,13 @@
 
 .modal-table__header {
     color: #9f8f81;
+    white-space: nowrap;
+    width: 35%;
 }
 
 .modal-table__item {
     color: #a7998d;
+    width: 65%;
 }
 
 .modal-delete {

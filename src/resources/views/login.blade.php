@@ -13,7 +13,7 @@
     <header class="header">
         <div class="header__inner">
             <h1 class="header__logo">FashionablyLate</h1>
-            <a href="/login" class="header__button">register</a>
+            <a href="/register" class="header__button">register</a>
         </div>
     </header>
 

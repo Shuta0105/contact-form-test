@@ -28,6 +28,19 @@
     width: 70%;
 }
 
+.form__input-name {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__input-tel {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 input::placeholder {
     color: #918071;
 }
@@ -39,7 +52,6 @@ input::placeholder {
     border-radius: 3px;
     padding: 5px 20px;
     outline: none;
-    margin-right: 20px;
     background-color: #f4f4f4;
 }
 
@@ -53,6 +65,7 @@ input::placeholder {
 }
 
 .form__input--radio {
+    accent-color: #8b7969;
     margin-right: 5px;
 }
 
@@ -68,21 +81,27 @@ input::placeholder {
 }
 
 .form__input--tel {
-    width: 25%;
+    width: 30%;
     height: 40px;
     border: none;
     border-radius: 3px;
     padding: 5px 20px;
     outline: none;
     background-color: #f4f4f4;
+    text-align: center;
 }
 
 .form__input--dash {
     margin: 0 10px;
 }
 
+.form__select-box {
+    width: 70%;
+    text-align: left;
+}
+
 .form__select {
-    width: 40%;
+    width: 50%;
     height: 40px;
     border: none;
     border-radius: 3px;
