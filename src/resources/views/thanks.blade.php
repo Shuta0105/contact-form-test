@@ -9,7 +9,7 @@
 <body>
     <div class="content">
         <div class="content__header">
-            <h2>お問い合わせありがとうございました</h2>
+            <h1>お問い合わせありがとうございました</h1>
         </div>
         <div class="content__button">
             <a href="/" class="button">HOME</a>

@@ -7,13 +7,6 @@
     <title>FashionablyLate</title>
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
-    <style>
-        svg.w-5.h-5 {
-            /*paginateメソッドの矢印の大きさ調整のために追加*/
-            width: 30px;
-            height: 30px;
-        }
-    </style>
 </head>
 
 <body>
@@ -32,37 +25,32 @@
             <div class="admin__header">
                 <h2>Admin</h2>
             </div>
-            <div class="admin__search">
-                <form action="/search" class="search__form" method="get">
-                    <div class="form__input">
-                        <input class="form__input--text" type="text" name="name_or_email" placeholder="名前やメールアドレスを入力してください" value="{{ request('name_or_email') }}">
-                    </div>
-                    <select class="form__select" name="gender">
-                        <option value="">性別</option>
-                        <option value="1" {{ request('gender') == 1 ? 'selected' : '' }}>男性</option>
-                        <option value="2" {{ request('gender') == 2 ? 'selected' : '' }}>女性</option>
-                        <option value="3" {{ request('gender') == 3 ? 'selected' : '' }}>その他</option>
-                    </select>
-                    <select class="form__select" name="category_id">
-                        <option value="">お問い合わせの種類</option>
-                        @foreach ($categories as $category)
-                        <option value="{{ $category['id'] }}" {{ request('category_id') == $category['id'] ? 'selected' : '' }}>{{ $category->content }}</option>
-                        @endforeach
-                    </select>
-                    <div class="form__input">
-                        <input class="form__input--date" type="date" name="date" placeholder="年/月/日" value="{{ request('date') }}">
-                    </div>
-                    <div class="form__button">
-                        <button class="form__button--submit" type="submit">検索</button>
-                    </div>
-                </form>
-                <form action="/reset" class="reset__form" method="get">
-                    @csrf
-                    <div class="form__button">
-                        <button class="form__button--reset">リセット</button>
-                    </div>
-                </form>
-            </div>
+            <form action="/search" class="search__form" method="get">
+                <div class="form__input--name_or_email">
+                    <input class="form__input--text" type="text" name="name_or_email" placeholder="名前やメールアドレスを入力してください" value="{{ request('name_or_email') }}">
+                </div>
+                <select class="form__select" name="gender">
+                    <option value="">性別</option>
+                    <option value="1" {{ request('gender') == 1 ? 'selected' : '' }}>男性</option>
+                    <option value="2" {{ request('gender') == 2 ? 'selected' : '' }}>女性</option>
+                    <option value="3" {{ request('gender') == 3 ? 'selected' : '' }}>その他</option>
+                </select>
+                <select class="form__select" name="category_id">
+                    <option value="">お問い合わせの種類</option>
+                    @foreach ($categories as $category)
+                    <option value="{{ $category['id'] }}" {{ request('category_id') == $category['id'] ? 'selected' : '' }}>{{ $category->content }}</option>
+                    @endforeach
+                </select>
+                <div class="form__input">
+                    <input class="form__input--date" type="date" name="date" placeholder="年/月/日" value="{{ request('date') }}">
+                </div>
+                <div class="form__button">
+                    <button class="form__button--submit" type="submit">検索</button>
+                </div>
+                <div class="form__button">
+                    <a href="/admin" class="form__button--reset">リセット</a>
+                </div>
+            </form>
             <div class="admin__page">
                 <form action="/export" class="export__form" method="get">
                     <input type="hidden" name="name_or_email" value="{{ request('name_or_email') }}">
@@ -161,7 +149,6 @@
                         <button class="modal-delete__button">削除</button>
                     </div>
                 </form>
-
             </div>
         </div>
     </main>

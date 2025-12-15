@@ -26,10 +26,10 @@
                 @csrf
                 <div class="form__label">メールアドレス</div>
                 <div class="form__input">
-                    <input class="form__input-text" type="email" name="email" placeholder="例: test@example.com" value="{{ old('email') }}">
+                    <input class="form__input-text" type="text" name="email" placeholder="例: test@example.com" value="{{ old('email') }}">
                 </div>
                 @error('email')
-                <div class="form__error" style="color: red; width: 70%; text-align: left;">
+                <div class="form__error">
                     {{$message}}
                 </div>
                 @enderror
@@ -38,7 +38,7 @@
                     <input class="form__input-text" type="password" name="password" placeholder="例: coachtech1106" value="{{ old('password') }}">
                 </div>
                 @error('password')
-                <div class="form__error" style="color: red; width: 70%; text-align: left;">
+                <div class="form__error">
                     {{$message}}
                 </div>
                 @enderror

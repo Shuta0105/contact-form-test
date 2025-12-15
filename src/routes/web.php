@@ -19,7 +19,6 @@ Route::get('/', [ContactController::class, 'index']);
 Route::post('/confirm', [ContactController::class, 'confirm']);
 Route::post('/modify', [ContactController::class, 'modify']);
 Route::post('/thanks', [ContactController::class, 'store']);
-Route::get('/reset', [AdminController::class, 'reset']);
 Route::delete('/delete', [AdminController::class, 'destroy']);
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [AdminController::class, 'index']);

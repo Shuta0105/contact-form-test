@@ -13,7 +13,7 @@
 <body>
     <header class="header">
         <div class="header__inner">
-            <a href="/" class="header__logo">FashionablyLate</a>
+            <h1 class="header__logo">FashionablyLate</h1>
         </div>
     </header>
 

@@ -21,14 +21,14 @@
                 <input class="form__input--name" type="text" name="first_name" placeholder="例: 太郎" value="{{ old('first_name') }}">
             </div>
         </div>
-        <div class="form__error--name" style="display: flex; width: 70%; margin-left: 30%">
+        <div class="form__error--name">
             @error('last_name')
-            <div style="color: red; margin-bottom: 30px; margin-top: -20px; text-align: left; width: 50%;">
+            <div class="form__error-item--name">
                 {{$message}}
             </div>
             @enderror
             @error('first_name')
-            <div style="color: red; margin-bottom: 30px; margin-top: -20px; text-align: left; width: 50%">
+            <div class="form__error-item--name">
                 {{$message}}
             </div>
             @enderror
@@ -56,7 +56,7 @@
             </div>
         </div>
         @error('gender')
-        <div style="color: red; margin-bottom: 30px; margin-top: -20px; text-align: center; width: 80%;">
+        <div class="form__error--gender">
             {{$message}}
         </div>
         @enderror
@@ -66,11 +66,11 @@
                 <span class="form__label--required">※</span>
             </div>
             <div class="form__input">
-                <input class="form__input--email" type="email" name="email" placeholder="例: test@example.com" value="{{ old('email') }}">
+                <input class="form__input--email" type="text" name="email" placeholder="例: test@example.com" value="{{ old('email') }}">
             </div>
         </div>
         @error('email')
-        <div style="color: red; margin-bottom: 30px; margin-top: -20px; text-align: center; width: 90%;">
+        <div class="form__error--email">
             {{$message}}
         </div>
         @enderror
@@ -87,19 +87,19 @@
                 <input class="form__input--tel" type="tel" name="tel3" placeholder="5678" value="{{ old('tel3') }}">
             </div>
         </div>
-        <div class="form__error--tel" style="display: flex; justify-content:space-between; width: 75%; margin: 0 0 0 auto">
+        <div class="form__error--tel">
             @error('tel1')
-            <div style="color: red; margin-bottom: 30px; margin-top: -20px;">
+            <div class="form__error-item--tel">
                 {{$message}}
             </div>
             @enderror
             @error('tel2')
-            <div style="color: red; margin-bottom: 30px; margin-top: -20px;">
+            <div class="form__error-item--tel">
                 {{$message}}
             </div>
             @enderror
             @error('tel3')
-            <div style="color: red; margin-bottom: 30px; margin-top: -20px;">
+            <div class="form__error-item--tel">
                 {{$message}}
             </div>
             @enderror
@@ -114,7 +114,7 @@
             </div>
         </div>
         @error('address')
-        <div style="color: red; margin-bottom: 30px; margin-top: -20px; text-align: center; width: 80%;">
+        <div class="form__error--address">
             {{$message}}
         </div>
         @enderror
@@ -141,7 +141,7 @@
             </div>
         </div>
         @error('category_id')
-        <div style="color: red; margin-bottom: 30px; margin-top: -20px; text-align: center; width: 90%;">
+        <div class="form__error--category">
             {{$message}}
         </div>
         @enderror
@@ -155,7 +155,7 @@
             </div>
         </div>
         @error('detail')
-        <div style="color: red; margin-bottom: 30px; margin-top: -20px; text-align: center; width: 90%;">
+        <div class="form__error--detail">
             {{$message}}
         </div>
         @enderror

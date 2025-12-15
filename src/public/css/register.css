@@ -91,3 +91,9 @@
     padding: 10px 20px;
     cursor: pointer;
 }
+
+.form__error {
+    color: red;
+    text-align: left;
+    width: 70%;
+}

@@ -18,29 +18,30 @@ class AdminController extends Controller
     public function search(Request $request)
     {
         $categories = Category::all();
-        $contacts = Contact::with('category')
-            ->where(function ($q) use ($request) {
-                $search = $request->name_or_email;
+        $query = Contact::with('category');
 
-                $q->where('last_name', 'LIKE', '%' . $search . '%')
-                    ->orWhere('first_name', 'LIKE', '%' . $search . '%')
-                    ->orWhere('email', 'LIKE', '%' . $search . '%');
-            })
-            ->when($request->gender, function ($q) use ($request) {
-                $q->where('gender', $request->gender);
-            })
-            ->when($request->category_id, function ($q) use ($request) {
-                $q->where('category_id', $request->category_id);
-            })
-            ->when($request->date, function ($q) use ($request) {
-                $q->whereDate('created_at', $request->date);
-            })
-            ->paginate(7);
+        if ($request->filled('name_or_email')) {
+            $query->where(function ($q) use ($request) {
+                $keyword = preg_replace('/\s+/u', '', $request->name_or_email);
+                $q->Where('email', 'LIKE', '%' . $request->name_or_email . '%')
+                    ->orWhereRaw(
+                        "CONCAT(last_name, first_name) LIKE ?",
+                        ['%' . $keyword . '%']
+                    );
+            });
+        };
+        if ($request->filled('gender')) {
+            $query->where('gender', $request->gender);
+        };
+        if ($request->filled('category_id')) {
+            $query->where('category_id', $request->category_id);
+        };
+        if ($request->filled('date')) {
+            $query->whereDate('created_at', $request->date);
+        };
+
+        $contacts = $query->paginate(7);
         return view('admin', compact('contacts', 'categories'));
-    }
-    public function reset()
-    {
-        return redirect('/admin');
     }
     public function destroy(Request $request)
     {
@@ -53,9 +54,12 @@ class AdminController extends Controller
 
         if ($request->filled('name_or_email')) {
             $query->where(function ($q) use ($request) {
-                $q->where('last_name', 'LIKE', '%' . $request->name_or_email . '%')
-                    ->orWhere('first_name', 'LIKE', '%' . $request->name_or_email . '%')
-                    ->orWhere('email', 'LIKE', '%' . $request->name_or_email . '%');
+                $keyword = preg_replace('/\s+/u', '', $request->name_or_email);
+                $q->Where('email', 'LIKE', '%' . $request->name_or_email . '%')
+                    ->orWhereRaw(
+                        "CONCAT(last_name, first_name) LIKE ?",
+                        ['%' . $keyword . '%']
+                    );
             });
         };
         if ($request->filled('gender')) {

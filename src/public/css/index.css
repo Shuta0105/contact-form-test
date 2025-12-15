@@ -140,3 +140,49 @@ textarea::placeholder {
     cursor: pointer;
     background-color: #82756b;
 }
+
+.form__error--name {
+    display: flex;
+    width: 70%;
+    margin-left: 30%;
+}
+
+.form__error-item--name {
+    color: red;
+    margin-bottom: 30px;
+    margin-top: -20px;
+    text-align: left;
+    width: 50%;
+}
+
+.form__error--gender,
+.form__error--address {
+    color: red;
+    margin-bottom: 30px;
+    margin-top: -20px;
+    text-align: center;
+    width: 80%;
+}
+
+.form__error--email,
+.form__error--category,
+.form__error--detail {
+    color: red;
+    margin-bottom: 30px;
+    margin-top: -20px;
+    text-align: center;
+    width: 90%;
+}
+
+.form__error--tel {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    margin: 0 0 0 auto;
+}
+
+.form__error-item--tel {
+    color: red;
+    margin-bottom: 30px;
+    margin-top: -20px;
+}
